@@ -14,14 +14,14 @@ BOARD_KERNEL_CMDLINE := vmalloc=400M, console=ttyDCC0,115200,n8 androidboot.hard
 BOARD_KERNEL_BASE := 0x40200000
 BOARD_KERNEL_PAGESIZE := 2048
 
-# fix this up by examining /proc/mtd on a running device
+# partition sizes
 BOARD_BOOTIMAGE_PARTITION_SIZE := 5690624
 BOARD_RECOVERYIMAGE_PARTITION_SIZE := 6048768
 BOARD_SYSTEMIMAGE_PARTITION_SIZE := 147193856
 BOARD_USERDATAIMAGE_PARTITION_SIZE := 274464768
 BOARD_FLASH_BLOCK_SIZE := 131072
 
-# we are using prebuilt since its just cwm, but cm wants to use the second flag for proper
+# kernel
 TARGET_PREBUILT_KERNEL := device/lge/ms840/kernel
 TARGET_KERNEL_CONFIG := plague_defconfig
 
