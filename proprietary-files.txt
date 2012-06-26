@@ -45,6 +45,7 @@ bin/thermald
 bin/mpdecision
 lib/libthermal_mitigation_fusion.so
 lib/libthermal_mitigation.so
+lib/libaudio.so
 lib/libaudioalsa.so
 lib/libaudcal.so
 lib/libacdbmapper.so
