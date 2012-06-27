@@ -35,11 +35,11 @@ Depending on your connection, this might take awhile.
 WIP - Extract necessary binaries and proprietary files 
 ------------------------------------------------
 
-We will need to reuse some proprietary files from the stock ROM:
+We will need to reuse some proprietary files from the stock ROM and build our vendor tree (script(s) do it all ;):
 
     $ cd
     
-    $ cd ~/android/system/device/lge/esteem
+    $ cd ~/android/system/device/lge/ms840
     
     $ ./extract-files.sh
 
@@ -55,18 +55,18 @@ When the environment is setup, we need to grab a copy of Koush's ROM Manager and
 
     $ ./get-prebuilts
 
-Now, we build (system being your work directory):
+Now, we build (android/system being your work directory path):
 
     $ cd ~/android/system
 
-To build for the LG Esteem:
+To build for the LG ms840:
     
-    $ . build/envsetup.sh && brunch esteem
+    $ . build/envsetup.sh && brunch ms840
 
 
 Installing CM9
 ---------------
-If the build was successful, you can now take the update zip found in out/target/product/esteem/ and flash using a custom recovery. Make sure to grab the latest Gapps to complete the experience.
+If the build was successful, you can now take the update zip found in out/target/product/ms840/ and flash using a custom recovery. Make sure to grab the latest Gapps to complete the experience.
 
 When you want to rebuild with new changes to the BoardConfig.mk or after syncing to the latest CM src make sure to do the following before you recompile.
 

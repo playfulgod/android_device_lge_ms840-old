@@ -3,12 +3,30 @@ USE_CAMERA_STUB := true
 # inherit from the proprietary version
 -include vendor/lge/ms840/BoardConfigVendor.mk
 
+# Bootloader
 TARGET_NO_BOOTLOADER := true
-TARGET_BOARD_PLATFORM := msm8x60
+
+# Platform
+TARGET_BOARD_PLATFORM := msm8660
+TARGET_BOARD_PLATFORM_GPU := qcom-adreno200
+
+# Architecture
+TARGET_ARCH_VARIANT := armv7-a-neon
 TARGET_CPU_ABI := armeabi-v7a
 TARGET_ABI2 := armeabi
-TARGET_ARCH_VARIANT := armv7-a-neon
-TARGET_BOOTLOADER_BOARD_NAME := ms840
+TARGET_CPU_SMP := true
+ARCH_ARM_HAVE_TLS_REGISTER := true
+
+# Flags
+TARGET_GLOBAL_CFLAGS += -mfpu=neon -mfloat-abi=softfp
+TARGET_GLOBAL_CPPFLAGS += -mfpu=neon -mfloat-abi=softfp
+COMMON_GLOBAL_CFLAGS += -DREFRESH_RATE=60 -DQCOM_HARDWARE -DNO_QCOM_MVS
+
+# Scorpion optimizations
+TARGET_USE_SCORPION_BIONIC_OPTIMIZATION := true
+TARGET_USE_SCORPION_PLD_SET := true
+TARGET_SCORPION_BIONIC_PLDOFFS := 6
+TARGET_SCORPION_BIONIC_PLDSIZE := 128
 
 BOARD_KERNEL_CMDLINE := vmalloc=400M, console=ttyDCC0,115200,n8 androidboot.hardware=qcom loglevel=1
 BOARD_KERNEL_BASE := 0x40200000
